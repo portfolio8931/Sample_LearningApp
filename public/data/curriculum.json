@@ -1,0 +1,203 @@
+[
+  {
+    "id": "curr-001",
+    "title": "React 入門",
+    "description": "React の基本を学ぶ",
+    "chapters": [
+      {
+        "id": "chap-001",
+        "curriculumId": "curr-001",
+        "order": 1,
+        "title": "JSX の基本",
+        "lessons": [
+          {
+            "id": "less-001",
+            "chapterId": "chap-001",
+            "order": 1,
+            "title": "JSX とは",
+            "contentMarkdown": "## JSX とは\n\nJSX（JavaScript XML）は、コンポーネント指向のJavaScriptライブラリやフレームワーク（特にReact）で一般的に採用されている、**JavaScriptの拡張構文**です。\nJSXを用いると、JavaScriptのコード内にHTMLタグのような構文が埋め込み可能となり、より直感的かつ読みやすい形でUIのコードを表現することができます。\nJSX内ではJavaScriptの式を埋め込むことが可能です。動的な値をJSX内に簡単に導入することができ、開発者のコーディング体験や開発、デバッグの効率が上がります。",
+            "estimatedMinutes": 15,
+            "quiz": {
+              "questions": [
+                {
+                  "id": "q-curr001-chap001-less001-001",
+                  "type": "single",
+                  "prompt": "JSXとは何ですか？",
+                  "choices": ["JavaScriptの拡張構文", "HTMLの方言", "CSSのライブラリ"],
+                  "answerIndex": 0,
+                  "explanation": "JSXはJavaScriptの拡張構文です。"
+                },
+                {
+                  "id": "q-curr001-chap001-less001-002",
+                  "type": "multi",
+                  "prompt": "JSXでできることは？",
+                  "choices": ["JavaScriptのコード内にHTMLタグのような構文を埋め込める", "画面上に動画を流せる", "動的な値をJSX内に簡単に導入する", "CSSでアニメーションを作れる"],
+                  "answerIndices": [0,2],
+                  "explanation": "JSXを用いると、JavaScriptのコード内にHTMLタグのような構文を埋め込むことができます。\nJSX内ではJavaScriptの式を埋め込むことにより、動的な値をJSX内に簡単に導入することができます。"
+                },
+                {
+                  "id": "q-curr001-chap001-less001-003",
+                  "type": "text",
+                  "prompt": "下記elementにh1タグでHello,World.と代入してください\n\n```ts\nconst element = ;\n```",
+                  "expected": "constelement=<h1>hello,world.</h1>;",
+                  "explanation": "JSX内では、要素に直接テキストを書くことができるため、HTMLと同じような記述方法で代入することができます。"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "chap-002",
+        "curriculumId": "curr-001",
+        "order": 2,
+        "title": "コンポーネントと型指定",
+        "lessons": [
+          {
+            "id": "less-002",
+            "chapterId": "chap-002",
+            "order": 1,
+            "title": "コンポーネント作成方法",
+            "contentMarkdown": "## コンポーネント作成方法\n\nReactではコンポーネントと呼ばれる、**使いまわしが可能な部品**を作成して、それを再利用して開発をします。\nReactのコンポーネントは、JSX内で `<ProfileCard />` のようにタグとして利用します。その際、HTMLタグ（小文字）と区別するためにコンポーネント名は必ず大文字で始めるルールがあります。\nコンポーネントを別ファイルから使うにはエクスポート（export）が必要です。",
+            "estimatedMinutes": 15,
+            "quiz": {
+              "questions": [
+                {
+                  "id": "q-curr001-chap002-less001-001",
+                  "type": "single",
+                  "prompt": "コンポーネントとは何ですか？",
+                  "choices": ["JavaScriptの計算式", "再利用可能なUIの部品", "VSCodeの拡張機能"],
+                  "answerIndex": 1,
+                  "explanation": "Reactのコンポーネントは、Webページを構成する最小単位のUI部品です。ボタンやフォーム、プロフィールカードなどを「部品」として切り出して再利用することで、保守性・可読性が高まります。"
+                },
+                {
+                  "id": "q-curr001-chap002-less001-002",
+                  "type": "multi",
+                  "prompt": "コンポーネント名として正しいのは？",
+                  "choices": ["<Button />", "<input />", "<userProfile />", "<ProfileCard />","<header />"],
+                  "answerIndices": [0,3],
+                  "explanation": "HTMLタグ（小文字）と区別するためにコンポーネント名は必ず大文字で始めるルールがあります。"
+                },
+                {
+                  "id": "q-curr001-chap002-less001-003",
+                  "type": "text",
+                  "prompt": "<ProfileCard />を他コンポーネントで使えるように「default」を含めてエクスポートしてください",
+                  "expected": "exportdefaultprofilecard;",
+                  "explanation": "コンポーネントを別ファイルから使うにはエクスポート（export）が必要です。"
+                }
+              ]
+            }
+          },
+          {
+            "id": "less-003",
+            "chapterId": "chap-002",
+            "order": 2,
+            "title": "Propsの型指定",
+            "contentMarkdown": "## Propsの型指定\n\nPropsは親コンポーネントから子コンポーネントへ値を渡すための仕組みです。\nPropsで渡せるデータの型に制限はなく、文字列、数値、オブジェクト、配列など、さまざまなデータを扱えます。\nPropsを使用することで、コンポーネントのさらなる再利用性が高まります。",
+            "estimatedMinutes": 15,
+            "quiz": {
+              "questions": [
+                {
+                  "id": "q-curr001-chap002-less002-001",
+                  "type": "single",
+                  "prompt": "Propsとは何ですか？",
+                  "choices": ["値に名前を付けて定義する", "自動で動作する処理を作成する", "親コンポーネントから子コンポーネントへ値を渡すための仕組み"],
+                  "answerIndex": 2,
+                  "explanation": "Propsは親コンポーネントから子コンポーネントに値を渡す仕組みです。"
+                },
+                {
+                  "id": "q-curr001-chap002-less002-002",
+                  "type": "single",
+                  "prompt": "以下のように定義された部分は何をしているか？\n\n```ts\ntype ProfileCardProps = {name: string; age:number};\n```",
+                  "choices": ["Props の初期値を定義している", "Props に渡す値の「型」を定義している", "Props をHTMLタグに変換している"],
+                  "answerIndex": 1,
+                  "explanation": "Propsに渡す値の型を定義しています。\nこれにより、TypeScript で型チェックが行われ、誤った型の値が渡されることを防げます。"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "chap-003",
+        "curriculumId": "curr-001",
+        "order": 3,
+        "title": "React HooksとRedux",
+        "lessons": [
+          {
+            "id": "less-004",
+            "chapterId": "chap-003",
+            "order": 1,
+            "title": "React Hooksとはなにか？",
+            "contentMarkdown": "## React Hooksとはなにか？\n\nReact Hooks（フック）はReactの関数の中で「便利な機能」を呼び出せる仕組みです。\nアプリを作成するときに、「変わる値を覚えておきたい」とか「特定のタイミングで処理したい」とか「全体で同じ情報を使いたい」ってことがよくあります。\nそれを助けてくれるのがReact Hooksです。\n◇useState…値を覚えておいて、必要なタイミングで書き換えることができます。\n◇useEffect…特定のタイミング「最初に画面が表示されるとき」「特定の値が変更されたら」などの時に、自動で動作する処理を作成することができます。\n◇useContext…アプリ全体に「共通の情報」を流して、どこからでも受け取れます。",
+            "estimatedMinutes": 20,
+            "quiz": {
+              "questions": [
+                {
+                  "id": "q-curr001-chap003-less001-001",
+                  "type": "single",
+                  "prompt": "useStateフックの役割はどれか？",
+                  "choices": ["コンポーネントの表示を制御する", "コンポーネントの値を覚えて、必要に応じて更新できる", "全体のテーマを設定する"],
+                  "answerIndex": 1,
+                  "explanation": "useStateはコンポーネントの状態（値）を覚えて、必要に応じて更新できるフックです。"
+                },
+                {
+                  "id": "q-curr001-chap003-less001-002",
+                  "type": "single",
+                  "prompt": "useEffect の基本的な使い方として正しい構文はどれか？",
+                  "choices": ["useEffect[](() => { 処理 }, 値);", "useEffect(() => { 処理 }, [値]);", "useEffect({ 処理 }, () => [値]);"],
+                  "answerIndex": 1,
+                  "explanation": "第1引数に副作用の関数、第2引数に依存配列を渡すことで、依存値が変化したときだけ副作用を実行できます。"
+                },
+                {
+                  "id": "q-curr001-chap003-less001-003",
+                  "type": "single",
+                  "prompt": "useContextを使う目的として最も適切な説明はどれか？",
+                  "choices": ["イベント発火の処理を軽くするため", "コンポーネント間でデータの受け渡しを props で管理しやすくするため", "複数のコンポーネント間で共通の値を共有するため"],
+                  "answerIndex": 2,
+                  "explanation": "useContextは 複数のコンポーネント間で共通の値を共有する ために使います。\n親から子へpropsを逐一渡す必要がなく、グローバルに近い状態管理が可能です。"
+                }
+              ]
+            }
+          },
+          {
+            "id": "less-005",
+            "chapterId": "chap-003",
+            "order": 2,
+            "title": "Reduxとは",
+            "contentMarkdown": "## Reduxとは\n\n状態管理のためのフレームワークのひとつです。\n一つのデータの状態を複数個所からアクセスできるようにする仕組みのことです。\nReduxはStore/Action/Reducer/Dispatchの4つの主要な要素で状態管理を実現しています。\n◇Store…アプリケーションの全てのstate（状態）を保持するオブジェクト。\n◇Action…アクション（何が起きたのか）とそれに付随する情報を持つオブジェクト。\n◇Reducer…Storeから受け取ったActionとstateに応じて、変更されたstateを返す純粋関数。\n◇Dispatch…ActionをStoreに送るメソッド。",
+            "estimatedMinutes": 20,
+            "quiz": {
+              "questions": [
+                {
+                  "id": "q-curr001-chap003-less002-001",
+                  "type": "single",
+                  "prompt": "Storeとは何ですか？",
+                  "choices": ["画面上のUIを変更する方法", "自動でstate（状態）のテンプレートを読み込む", "全てのstate（状態）を保持するオブジェクト"],
+                  "answerIndex": 2,
+                  "explanation": "Storeはアプリケーションの全てのstate（状態）を保持するオブジェクトです。"
+                },
+                {
+                  "id": "q-curr001-chap003-less002-002",
+                  "type": "single",
+                  "prompt": "Actionとは何ですか？",
+                  "choices": ["アクションとそれに付随する情報を持つオブジェクト", "アクションに連動して自動でオブジェクトを生成する", "全てのstate（状態）を保持するオブジェクト"],
+                  "answerIndex": 0,
+                  "explanation": "Actionとはアクション（何が起きたのか）とそれに付随する情報を持つオブジェクトです。"
+                },
+                {
+                  "id": "q-curr001-chap003-less002-003",
+                  "type": "single",
+                  "prompt": "Reducerとは何ですか？",
+                  "choices": ["ActionをStoreに送るメソッド", "変更されたstateを返す純粋関数", "画面遷移を扱うためのライブラリ"],
+                  "answerIndex": 1,
+                  "explanation": "ReducerとはStoreから受け取ったActionとstateに応じて、変更されたstateを返す純粋関数です。"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
