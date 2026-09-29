@@ -34,17 +34,17 @@ React と Redux Toolkit を使用して作成した、プログラミングな�
 
 ```mermaid
 graph TD
-    RootState[RootState (store/index.ts)] --> curriculum[curriculumSlice : カリキュラム・問題マスタ]
-    RootState --> progress[progressSlice : 進捗・学習時間]
-    RootState --> history[historySlice : クイズ回答履歴]
-    RootState --> review[reviewSlice : 復習マーク]
-    RootState --> quiz[quizSlice : クイズ回答]
-    RootState --> ui[uiSlice : トースト表示等のUI]
+    RootState["RootState (store/index.ts)"] --> curriculum["curriculumSlice : カリキュラム・問題マスタ"]
+    RootState --> progress["progressSlice : 進捗・学習時間"]
+    RootState --> history["historySlice : クイズ回答履歴"]
+    RootState --> review["reviewSlice : 復習マーク"]
+    RootState --> quiz["quizSlice : クイズ回答"]
+    RootState --> ui["uiSlice : トースト表示等のUI"]
 
     %% 相互参照関係
-    curriculum & progress & history --> Dashboard[ダッシュボード表示]
-    curriculum & review --> ReviewPage[復習ページ表示]
-    history & progress --> StudyChart[学習時間グラフ]
+    curriculum & progress & history --> Dashboard["ダッシュボード表示"]
+    curriculum & review --> ReviewPage["復習ページ表示"]
+    history & progress --> StudyChart["学習時間グラフ"]
 ```
 
 ## データモデル図
